@@ -109,13 +109,22 @@ async def bot_start(event):
                         \n\nPowered by [Catuserbot](https://t.me/catuserbot)"
         buttons = [
             (
-                Button.url("Repo", "https://github.com/sandy1709/catuserbot"),
+                Button.url("Sellix", "https://sellix.io/AllensBots"),
                 Button.url(
-                    "Deploy",
-                    "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack&template=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack",
+                    "YouTube",
+                    "https://www.youtube.com/channel/UC6tDheIp5d1Tfaza-mD2mLQ",
                 ),
             )
         ]
+        await event.client.send_file(
+            chat.id,
+            file='AgADBQADB60xGzrf0VdD2cCB5F8lOT3Qe3N0AAvyTAMAAQI',
+            caption=start_msg,
+            link_preview=False,
+            buttons=buttons,
+            reply_to=reply_to,
+        )
+        return
     else:
         start_msg = "Hey Master!\
             \nHow can i help you ?"
