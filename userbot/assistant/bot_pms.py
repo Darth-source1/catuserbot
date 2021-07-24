@@ -118,7 +118,7 @@ async def bot_start(event):
         ]
         await event.client.send_file(
             chat.id,
-            file='AgADBQADB60xGzrf0VdD2cCB5F8lOT3Qe3N0AAvyTAMAAQI',
+            file='https://telegra.ph/file/bea7b5f21956f106aa003.jpg',
             caption=start_msg,
             link_preview=False,
             buttons=buttons,
