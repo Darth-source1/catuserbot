@@ -155,13 +155,13 @@ async def bot_start(event):
         
         
 @catub.tgbot.on(CallbackQuery(data=re.compile(b"contact_support")))
-async def support(c_q: CallbackQuery):
-    chat = c_q.chat_instance
-    data = c_q.data
-    print(query)
+async def support(event):
+    user = event.query.user_id
+    data = event.query.data
+    print(event.query)
     if not data == 'contact_support':
         return
-    #await tgbot.send_message(1876865523,chat)
+    #await tgbot.send_message(1876865523,f"[User](tg://user?id={user}) requested to contact")
     await c_q.respond('Our Support team will contact you shortly')
 
 
