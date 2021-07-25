@@ -113,13 +113,13 @@ async def bot_start(event):
                 Button.url(
                     "YouTube",
                     "https://www.youtube.com/channel/UC6tDheIp5d1Tfaza-mD2mLQ",
-                )
+                ),
             ),
             (
                 Button.inline(
                     "Technical Support",
-                    "contact_support",
-                )
+                    data="contact_support",
+                ),
             )
         ]
         await event.client.send_file(
