@@ -159,7 +159,7 @@ async def support(event):
     user = event.query.user_id
     data = event.query.data
     print(event.query)
-    await tgbot.send_message(1876865523,f"[User](tg://user?id={user}) requested to contact")
+    await tgbot.send_message(BOTLOG_CHATID,f"[User](tg://user?id={user}) requested to contact")
     await event.respond('Our Support team will contact you shortly')
 
 
