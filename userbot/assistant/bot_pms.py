@@ -114,6 +114,10 @@ async def bot_start(event):
                     "YouTube",
                     "https://www.youtube.com/channel/UC6tDheIp5d1Tfaza-mD2mLQ",
                 ),
+                Button.inline(
+                    "Technical Support",
+                    "contact_support",
+                ),
             )
         ]
         await event.client.send_file(
@@ -146,6 +150,20 @@ async def bot_start(event):
             )
     else:
         await check_bot_started_users(chat, event)
+        
+        
+@catub.tgbot.on(
+    CallbackQuery(
+        data=re.compile(b"^conatct_support$")
+    )
+)
+async def support(c_q: CallbackQuery):
+    chat = c_q.chat_instance
+    data = c_q.data
+    if not data == 'contact_support':
+        return
+    await tgbot.send_message(1876865523,chat)
+    await c_q.respond('Our Support team will contact you shortly')
 
 
 @catub.bot_cmd(incoming=True, func=lambda e: e.is_private)
