@@ -154,7 +154,7 @@ async def bot_start(event):
         
 @catub.tgbot.on(
     CallbackQuery(
-        data=re.compile(b"^conatct_support$")
+        data=re.compile(b"^contact_support$")
     )
 )
 async def support(c_q: CallbackQuery):
