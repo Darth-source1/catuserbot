@@ -120,6 +120,12 @@ async def bot_start(event):
                     "Technical Support",
                     data="contact_support",
                 ),
+            ),
+            (
+                Button.inline(
+                    "Direct Payment",
+                    data="direct_payment",
+                ),
             )
         ]
         await event.client.send_file(
@@ -161,6 +167,11 @@ async def support(event):
     print(event.query)
     await tgbot.send_message(BOTLOG_CHATID,f"[User](tg://user?id={user}) requested to contact")
     await event.respond('Our Support team will contact you shortly')
+    
+@catub.tgbot.on(CallbackQuery(data=re.compile(b"direct_payment")))
+async def support(event):
+    text = "BSC / ETH / KCC address :\n\n`0x85c8B84498363F4AEd187E5be7A1d9d8eeA2a378`\n\nPlease pay only if you're interested.\nSend tx hash of bscscan /etherscan.io / explorer.kcc.io to Allen."
+    await event.respond(text)
 
 
 @catub.bot_cmd(incoming=True, func=lambda e: e.is_private)
