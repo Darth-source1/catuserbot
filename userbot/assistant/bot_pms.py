@@ -159,9 +159,7 @@ async def support(event):
     user = event.query.user_id
     data = event.query.data
     print(event.query)
-    if not data == 'contact_support':
-        return
-    #await tgbot.send_message(1876865523,f"[User](tg://user?id={user}) requested to contact")
+    await tgbot.send_message(1876865523,f"[User](tg://user?id={user}) requested to contact")
     await c_q.respond('Our Support team will contact you shortly')
 
 
