@@ -170,7 +170,7 @@ async def support(event):
     
 @catub.tgbot.on(CallbackQuery(data=re.compile(b"direct_payment")))
 async def support(event):
-    text = "BSC / ETH / KCC address :\n\n`0x85c8B84498363F4AEd187E5be7A1d9d8eeA2a378`\n\nPlease pay only if you're interested.\nSend tx hash of bscscan /etherscan.io / explorer.kcc.io to Allen."
+    text = "BSC / ETH / KCC address :\n\n`0x85c8B84498363F4AEd187E5be7A1d9d8eeA2a378`\n\nPlease pay only if you're interested.\nSend tx hash of bscscan.com / etherscan.io / explorer.kcc.io to Allen."
     await event.respond(text)
 
 
