@@ -166,7 +166,7 @@ async def support(event):
     data = event.query.data
     print(event.query)
     await tgbot.send_message(BOTLOG_CHATID,f"[User](tg://user?id={user}) requested to contact")
-    await event.respond('Our Support team will contact you shortly')
+    await event.respond('You can ask your questions now. Our Support team will contact you shortly.')
     
 @catub.tgbot.on(CallbackQuery(data=re.compile(b"direct_payment")))
 async def support(event):
